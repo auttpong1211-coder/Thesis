@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOM - Luxury Travel & Experiences</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">BLOOM</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#location-section-tour">สถานที่ท่องเที่ยว</a></li>
+                <li><a href="#location-section-restaurant">ร้านอาหารแนะนำ</a></li>
+                <li><a href="#contact-section">ติดต่อเรา</a></li> 
+                <li class="nav-icon search-icon"><a href="#" id="searchToggle">&#128269;</a></li> 
+                <li class="nav-icon account-icon"><a href="#" id="accountToggle">&#128100;</a></li> 
+            </ul>
+        </nav>
+        <div class="menu-icon">&#9776;</div> 
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="vedio/3571264-uhd_3840_2160_30fps.mp4" type="video/mp4"> 
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="hero-content">
+                <p></p>
+                <h1>Bloom</h1>
+                <a href="#tour-hero" class="button">Start</a>
+            </div>
+        </section>
+
+        <section class="hero-image" id="tour-hero" style="background-image: url('https://static.wixstatic.com/media/9c608a_2f0a80ebe92f4657852b48447144c505.jpg/v1/fill/w_659,h_629,al_c,q_85,enc_avif,quality_auto/9c608a_2f0a80ebe92f4657852b48447144c505.jpg'), url('image/tour-2.jpg');">
+            <div class="hero-content">
+                <h1>สถานที่ท่องเที่ยว</h1> 
+                <a href="#location-section-tour" class="button view-tour">View</a>
+            </div>
+        </section>
+
+        <section class="hero-image" id="restaurant-hero" style="background-image: url('https://static.wixstatic.com/media/9c608a_843cbc1101c646b09ff112d0b0ef3c4c.jpg/v1/fill/w_998,h_953,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9c608a_843cbc1101c646b09ff112d0b0ef3c4c.jpg'), url('');">
+            <div class="hero-content">
+                <h1>ร้านอาหาร</h1> 
+                <a href="#location-section-restaurant" class="button view-restaurant">View</a>
+            </div>
+        </section>
+
+        <section class="hero-image" id="contact-hero" style="background-image: url('https://static.wixstatic.com/media/9c608a_a952687946d5443c8c20904b596097a9.jpg/v1/fill/w_770,h_735,al_c,q_85,enc_avif,quality_auto/9c608a_a952687946d5443c8c20904b596097a9.jpg'), url('');">
+            <div class="hero-content">
+                <h1>ติดต่อเรา</h1> 
+                <a href="#contact-section" class="button view-contact">View</a>
+            </div>
+        </section>
+
+        <section id="location-section-tour" class="sections-container" data-bg-image="image/location-bg.jpg">
+            <a href="#" class="button inverted back-to-home-btn" style="position: absolute; top: 30px; left: 60px;">&larr; Back to Home</a>
+            <h2>สถานที่ท่องเที่ยว</h2>
+            
+            <div class="two-column-layout">
+                <div class="column">
+                    <h3></h3>
+                    <ul class="clean-list" id="locationList">
+                        <li><a href="#" data-title="ตลาดนัดรถไฟ" data-details="ตลาดนัดวินเทจขนาดใหญ่ที่มีของมือสองหายาก และร้านอาหารสตรีทฟู้ดมากมาย เปิดเฉพาะช่วงเย็นและวันหยุดสุดสัปดาห์">ตลาดนัดรถไฟ</a></li>
+                        <li><a href="#" data-title="วัดพระศรีมหาธาตุ" data-details="วัดสำคัญที่มีเจดีย์บรรจุพระบรมสารีริกธาตุ เป็นสถานที่สงบสำหรับสักการะและทำบุญ">วัดพระศรีมหาธาตุ</a></li>
+                        <li><a href="#" data-title="พิพิธภัณฑ์ศิลปะร่วมสมัย (MOCA)" data-details="แหล่งรวมผลงานศิลปะร่วมสมัยของศิลปินชาวไทยที่มีชื่อเสียงในอาคารดีไซน์ล้ำสมัย">พิพิธภัณฑ์ศิลปะร่วมสมัย (MOCA)</a></li>
+                        <li><a href="#" data-title="ตลาดนัดจตุจักรกลางคืน" data-details="ตลาดนัดกลางคืนขนาดใหญ่ที่เต็มไปด้วยเสื้อผ้า ของใช้ และอาหารหลากหลาย เปิดทำการในช่วงเย็นวันศุกร์และวันเสาร์-อาทิตย์">ตลาดนัดจตุจักรกลางคืน (จตุจักรไนท์มาร์เก็ต)</a></li>
+                        <li><a href="#" data-title="เซ็นทรัลรามอินทรา" data-details="ศูนย์การค้าขนาดใหญ่ที่มีสินค้าแฟชั่น ร้านอาหาร โรงภาพยนตร์ และเป็นแหล่งรวมความบันเทิงในย่านรามอินทรา">เซ็นทรัลรามอินทรา</a></li>
+                        <li><a href="#" data-title="เมเจอร์ซีนีเพล็กซ์ รัชโยธิน" data-details="แหล่งรวมโรงภาพยนตร์ทันสมัย พร้อมด้วยร้านค้าและร้านอาหารหลากหลาย เหมาะสำหรับพักผ่อนหลังเลิกงาน">เมเจอร์ซีนีเพล็กซ์ รัชโยธิน</a></li>
+                        <li><a href="#" data-title="ห้องสมุดและ Co-Working Space" data-details="พื้นที่สำหรับการทำงาน อ่านหนังสือ และแลกเปลี่ยนความคิดเห็น บรรยากาศเงียบสงบและมีอินเทอร์เน็ตความเร็วสูง">ห้องสมุดและ Co-Working Space</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="location-section-restaurant" class="sections-container" data-bg-image="image/restaurant-list-bg.jpg">
+            <a href="#" class="button inverted back-to-home-btn" style="position: absolute; top: 30px; left: 60px;">&larr; Back to Home</a>
+            <h2>ร้านอาหารแนะนำ</h2>
+
+            <div class="two-column-layout">
+                <div class="column">
+                    <h3></h3>
+                    <ul class="clean-list" id="restaurantList">
+                        <li><a href="#" data-title="Bad Bad Burger" data-details="ร้านเบอร์เกอร์รสชาติจัดจ้าน พร้อมขนมปังโฮมเมดและเนื้อคุณภาพดี เป็นที่นิยมของคนรุ่นใหม่">Bad Bad Burger</a></li>
+                        <li><a href="#" data-title="Meetup Mingle Cafe & Game" data-details="คาเฟ่ที่มีบอร์ดเกมและกิจกรรมให้เล่น เหมาะสำหรับการรวมกลุ่มเพื่อนและสังสรรค์ในบรรยากาศสบาย ๆ">Meetup Mingle Cafe & Game</a></li>
+                        <li><a href="#" data-title="Wallace" data-details="ร้านอาหารสไตล์ยุโรปที่มีการตกแต่งหรูหรา และเมนูพรีเมียมที่เน้นวัตถุดิบคุณภาพสูง">Wallace</a></li>
+                        <li><a href="#" data-title="หม่าล่าเสฉวน ตรงข้ามม.ศรีปทุม" data-details="ร้านหม่าล่ารสชาติเข้มข้นสไตล์เสฉวนแท้ ๆ มีวัตถุดิบให้เลือกหลากหลายในราคาย่อมเยา">หม่าล่าเสฉวน ตรงข้ามม.ศรีปทุม</a></li>
+                        <li><a href="#" data-title="สุกี้จานบิน สุกี้หม่าล่าสายพาน" data-details="สุกี้หม่าล่าแบบสายพานที่มีน้ำซุปและน้ำจิ้มรสเด็ด พร้อมบริการตนเองและวัตถุดิบที่สดใหม่">สุกี้จานบิน สุกี้หม่าล่าสายพาน</a></li>
+                        <li><a href="#" data-title="little chicky" data-details="ร้านไก่ทอดสไตล์เกาหลีที่มีซอสให้เลือกหลายรสชาติ และเมนูของทานเล่นที่หลากหลาย">little chicky</a></li>
+                        <li><a href="#" data-title="โอยั๊วะเกษตร" data-details="ร้านอาหารไทย/ซีฟู้ดที่มีชื่อเสียงมายาวนาน บรรยากาศดี เหมาะสำหรับครอบครัวและการจัดเลี้ยง">โอยั๊วะเกษตร</a></li>
+                        <li><a href="#" data-title="Uptojug Kitchen & Cafe" data-details="คาเฟ่และร้านอาหารที่มีเมนูฟิวชั่นสร้างสรรค์ พร้อมมุมถ่ายรูปสวย ๆ และเครื่องดื่มกาแฟคุณภาพดี">Uptojug Kitchen & Cafe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-section" class="sections-container" data-bg-image="image/contact-bg.jpg">
+            <a href="#" class="button inverted back-to-home-btn" style="position: absolute; top: 30px; left: 60px;">&larr; Back to Home</a>
+            <h2>ติดต่อเรา</h2>
+
+            <div class="two-column-layout contact-layout">
+                <div class="column contact-info-column">
+                    <h3>ข้อมูลการติดต่อ</h3>
+                    <p><strong>BLOOM - Luxury Travel & Experiences</strong></p>
+                    <p>กรุณากรอกแบบฟอร์มเพื่อสอบถามข้อมูลเกี่ยวกับการเดินทางแบบพรีเมียม หรือติดต่อเราโดยตรงผ่านข้อมูลด้านล่างนี้</p>
+                    <ul class="clean-list">
+                        <li><a href="tel:+66901234567" data-title="โทรศัพท์">โทรศัพท์: +66 (0)90 123 4567</a></li>
+                        <li><a href="mailto:contact@bloom.com" data-title="อีเมล">อีเมล: contact@bloom.com</a></li>
+                        <li><a href="#" data-title="ที่ตั้งสำนักงาน">สำนักงาน: 123/4 แถวนั้นแหละ กรุงเทพฯ 10110</a></li>
+                    </ul>
+                </div>
+
+                <div class="column contact-form-column">
+                    <h3>ส่งข้อความถึงเรา</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="input-group">
+                            <label for="contactName">ชื่อ - นามสกุล</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contactEmail">อีเมล</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contactMessage">ข้อความ</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="modal-button">ส่งข้อความ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="call-to-action-section">
+            <div class="cta-content">
+                <h2>แล้วทุกอย่างจะดีเอง</h2>
+                <p>สาธุ</p>
+                <a href="#" class="button inverted">Hello</a>
+            </div>
+            <img src="Im/images.jpg" alt="Planning a trip" class="cta-image">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">BLOOM</div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com/bloomtravel" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> 
+                <a href="https://twitter.com/bloomtravel" target="_blank" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a> 
+                <a href="https://instagram.com/bloomtravel" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a> 
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Bloom . All rights reserved.</p>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn login-close-btn">&times;</span>
+            <h2 class="modal-title">Sign In to Your Account</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="modal-button">Login</button>
+            </form>
+            <p class="signup-link">New customer? <a href="#">Create an account</a></p>
+        </div>
+    </div>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn detail-close-btn">&times;</span>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <div id="modalBody">
+                <p id="modalDetails"></p>
+                <img id="modalImage" src="" alt="Location Image" style="width: 100%; height: auto; margin-top: 20px; border-radius: 5px; object-fit: cover; max-height: 300px;">
+                <p style="margin-top: 20px; font-size: 0.9em; color: #888;">*ข้อมูลจำลองเพื่อการแสดงผล*</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchModal" class="modal">
+        <div class="modal-content search-modal-content">
+            <span class="close-btn search-close-btn">&times;</span>
+            <h2 class="modal-title">SEARCH BLOOM</h2>
+            <form id="searchForm">
+                <div class="input-group">
+                    <label for="searchQuery">Enter your search query</label>
+                    <input type="text" id="searchQuery" name="searchQuery" placeholder="e.g., ตลาดนัดรถไฟ หรือ ร้านอาหาร" required>
+                </div>
+                <button type="submit" class="modal-button">Search</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>

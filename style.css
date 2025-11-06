@@ -1,0 +1,750 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* --- Global Styles & Resets --- */
+/* ADDED: Global Reset for Box-Sizing (Best Practice) */
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    /* ADDED: Font Fallback */
+    font-family: 'Lora', serif, Georgia, 'Times New Roman', Times; 
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc; 
+    color: #333333; 
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    /* ADDED: Font Fallback */
+    font-family: 'Playfair Display', serif, 'Palatino Linotype', 'Book Antiqua', Palatino; 
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+/* ADDED: ซ่อนไอคอนแฮมเบอร์เกอร์ในมุมมอง Desktop */
+.menu-icon {
+    display: none; 
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px; 
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; 
+    font-weight: 700;
+    letter-spacing: 6px; 
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-left: 40px; 
+}
+
+.nav a {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: 5px; 
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #6a6a6a;
+}
+
+.nav a::after { 
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #1a1a1a;
+}
+
+.nav-icon { 
+    font-size: 18px; 
+}
+
+
+/* --- Hero Section (Video Background) --- */
+.hero {
+    position: relative;
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); 
+}
+
+/* UPDATED: สไตล์สำหรับวิดีโอพื้นหลัง (hero-video) */
+.hero-video {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    /* เทคนิคสำหรับวิดีโอพื้นหลังที่ครอบคลุมเสมอ */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    transform: translate(-50%, -50%);
+    filter: brightness(0.7); /* เพิ่มความเข้มเพื่อให้ข้อความอ่านง่าย */
+    object-fit: cover;
+}
+
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 7em; 
+    margin-bottom: 30px;
+    letter-spacing: 10px; 
+    line-height: 1.1;
+    color: #ffffff; 
+}
+
+/* --- ADDED: Hero Section (Image Background) --- */
+.hero-image {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); 
+    height: 60vh; 
+    min-height: 400px;
+    
+    /* UPDATED: การตั้งค่า Parallax สำหรับหลายภาพ */
+    background-size: cover, cover; /* กำหนดขนาดสำหรับ 2 ภาพ */
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed; /* ทำให้ภาพตรึงอยู่กับที่เมื่อเลื่อนจอ */
+    filter: brightness(0.7); /* ปรับความเข้ม */
+    transition: opacity 0.5s ease-in-out; /* เพิ่มลูกเล่น Fade-in/out */
+}
+
+/* สไตล์สำหรับภาพพื้นหลัง (ถูกแทนที่ด้วย CSS Background แล้ว) */
+.hero-bg-image {
+    display: none; 
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-image h1 {
+    font-size: 5em; /* ปรับขนาดให้เล็กลงเล็กน้อยจาก Hero หลัก */
+    margin-bottom: 20px;
+    letter-spacing: 10px; 
+    line-height: 1.1;
+    color: #ffffff; 
+}
+
+/* ปรับสไตล์ของปุ่มใน Hero Image ให้เป็นสีขาวเหมือนในภาพ */
+.hero-image .button {
+    padding: 10px 30px; 
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3); /* เพิ่มพื้นหลังทึบเล็กน้อย */
+    font-size: 14px;
+}
+/* --- End of Hero Image Styles --- */
+
+
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 15px 40px; 
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border-color: #ffffff;
+}
+
+.button.inverted { 
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+    background-color: transparent;
+}
+
+.button.inverted:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* --- Sections Container --- */
+.sections-container {
+    padding: 80px 60px; 
+    text-align: center;
+    background-color: #ffffff;
+    position: relative; 
+    z-index: 10; 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; /* เปลี่ยนเป็น flex-start เพื่อให้เนื้อหาเริ่มจากด้านบน */
+    opacity: 0; /* เริ่มต้นด้วย opacity 0 สำหรับลูกเล่น Fade In */
+    transition: opacity 0.5s ease-in-out; /* เพิ่มลูกเล่น Fade-in/out */
+    padding-top: 120px; /* เพิ่ม Padding ด้านบนเพื่อชดเชย Header และปุ่ม Back */
+}
+
+/* NEW: เพิ่ม Parallax Background ให้กับส่วนรายการสถานที่/ร้านอาหาร/ติดต่อ */
+.sections-container[data-bg-image] {
+    background-image: var(--bg-url);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* NEW: เมื่อส่วนถูกตั้งค่าให้แสดง (display: flex) ให้แสดงผลเต็มที่ */
+.sections-container[style*="display: flex"] {
+    opacity: 1;
+}
+
+.sections-container h2 {
+    font-size: 3.5em; 
+    margin-bottom: 70px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.sections-container h2::after { 
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #c0c0c0;
+    margin: 15px auto 0;
+}
+
+/* --- 2-Column List Layout (สำหรับสถานที่และร้านอาหาร) --- */
+
+.two-column-layout {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; 
+}
+
+/* NEW: ปรับสไตล์ของ 2-column layout สำหรับฟอร์มติดต่อ */
+.two-column-layout.contact-layout {
+    max-width: 1000px; /* ขยายความกว้างสำหรับฟอร์มและข้อมูลติดต่อ */
+    gap: 80px; 
+}
+
+.contact-info-column p {
+    margin-bottom: 20px;
+}
+
+.contact-form-column {
+    background-color: #fcfcfc; /* เพิ่มพื้นหลังเล็กน้อยสำหรับฟอร์ม */
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 10px;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    transition: border-color 0.3s;
+}
+
+.contact-form textarea:focus {
+    border-color: #1a1a1a; 
+    outline: none;
+}
+
+
+.two-column-layout .column {
+    flex-basis: 50%; 
+}
+
+.two-column-layout h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #444444;
+    text-align: center; 
+}
+
+.clean-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.clean-list li {
+    font-family: 'Lora', serif;
+    font-size: 1.1em;
+    padding: 0; 
+    margin: 0;
+    border-bottom: 1px solid #eeeeee; 
+    transition: background-color 0.3s ease;
+}
+
+.clean-list li a {
+    display: block; 
+    color: #333333;
+    text-decoration: none;
+    padding: 12px 0; 
+    transition: color 0.3s ease;
+}
+
+.clean-list li:hover {
+    background-color: #f9f9f9; 
+}
+
+.clean-list li a:hover {
+    color: #888888;
+}
+
+.clean-list li:last-child {
+    border-bottom: none; 
+}
+
+/* --- Call to Action Section --- */
+.call-to-action-section {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; 
+    padding: 80px 60px;
+    gap: 60px; 
+    overflow: hidden;
+    min-height: 100vh; 
+}
+
+.cta-content {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.cta-image {
+    flex: 1;
+    max-width: 600px; 
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    padding: 60px 60px;
+    font-size: 13px;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    flex-wrap: wrap; 
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.social-media a {
+    margin-left: 15px;
+    font-size: 18px;
+    color: #cccccc;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333333;
+}
+
+/* --- Modal Styles (สำหรับ Login, Detail, Search) --- */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 50px 60px; 
+    border: 1px solid #e0e0e0; 
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15); 
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+.close-btn {
+    color: #333333; 
+    float: right;
+    font-size: 30px; 
+    font-weight: normal;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #1a1a1a;
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; 
+    margin-bottom: 40px; 
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase; 
+}
+
+.input-group {
+    margin-bottom: 25px; 
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-weight: 400; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Lora', serif;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 10px; 
+    border: 1px solid #999999; 
+    box-sizing: border-box; 
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #1a1a1a; 
+    outline: none;
+}
+
+.modal-button {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 25px; 
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 3px; 
+    transition: background-color 0.3s;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+}
+
+.modal-button:hover {
+    background-color: #444444;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.signup-link a {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+.search-modal-content {
+    max-width: 500px; 
+    padding: 40px 50px;
+}
+
+/* --- Mobile Responsiveness (Media Queries) --- */
+@media (max-width: 992px) {
+    
+    /* --- HEADER & NAVIGATION (Mobile Menu) --- */
+    .header {
+        padding: 15px 30px;
+    }
+    
+    /* ADDED: แสดงไอคอนแฮมเบอร์เกอร์และซ่อนเมนูในมุมมองมือถือ */
+    .menu-icon {
+        display: block; 
+        cursor: pointer;
+        font-size: 28px;
+        order: 2; 
+    }
+    
+    /* ซ่อนเมนูนำทางเริ่มต้นและเตรียมสำหรับการเลื่อนเข้า */
+    .nav {
+        display: none; 
+        flex-direction: column;
+        position: fixed; 
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff; 
+        padding-top: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 90;
+        overflow-y: auto; 
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(100%); 
+    }
+    
+    /* ACTIVE: แสดงเมนูเมื่อ class 'open' ถูกเพิ่มด้วย JS */
+    .nav.open {
+        display: flex; 
+        transform: translateX(0); 
+    }
+
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav li {
+        margin: 20px 0;
+        border-bottom: 1px solid #eeeeee;
+    }
+    
+    .nav li:last-child {
+        border-bottom: none;
+    }
+
+    .nav a {
+        font-size: 1.2em; 
+        padding: 15px 0;
+        letter-spacing: 2px;
+    }
+    
+    .nav a::after {
+        display: none; 
+    }
+    
+    /* แสดงไอคอนบัญชี/ค้นหาภายในเมนูที่เปิดเท่านั้น */
+    .nav.open .nav-icon {
+        display: block; 
+        padding: 15px 0;
+        font-size: 1.5em; 
+    }
+    
+    /* ADDED: ล็อคการเลื่อนหน้าเมื่อเมนูเปิดอยู่ */
+    body.menu-active {
+        overflow: hidden; 
+    }
+    
+    /* --- HERO SECTION (Video) --- */
+    .hero {
+        height: 70vh;
+    }
+    
+    .hero h1 {
+        font-size: 3em; 
+        letter-spacing: 3px;
+        padding: 0 20px;
+    }
+
+    /* --- HERO IMAGE SECTION --- */
+    .hero-image {
+        height: 50vh;
+    }
+    .hero-image h1 {
+        font-size: 3em; 
+        letter-spacing: 3px;
+        padding: 0 20px;
+    }
+    
+    /* --- SECTIONS & LAYOUT --- */
+    .sections-container {
+        padding: 50px 30px;
+        min-height: auto; 
+    }
+    
+    .sections-container h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    
+    /* ADDED: ทำให้คอลัมน์ซ้อนกันในมุมมองมือถือ */
+    .two-column-layout {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    .two-column-layout h3 {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    /* NEW: ปรับ padding ของฟอร์มติดต่อในมือถือ */
+    .contact-form-column {
+        padding: 15px;
+    }
+
+    /* ADDED: ปรับ CTA Section ให้ Stack กัน */
+    .call-to-action-section {
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px 30px;
+        min-height: auto; 
+    }
+    
+    .cta-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .cta-image {
+        height: 300px; 
+    }
+    
+    /* --- FOOTER --- */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-nav ul {
+        flex-direction: column;
+    }
+    
+    .footer-nav li {
+        margin: 5px 0;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 20px;
+    }
+    
+    /* เพิ่ม: ปรับตำแหน่งของปุ่ม Back to Home ในมุมมองมือถือ */
+    .sections-container a.back-to-home-btn {
+        left: 30px !important; /* ปรับจาก 60px ใน desktop */
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
